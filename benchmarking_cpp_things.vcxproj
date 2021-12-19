@@ -152,9 +152,9 @@
   <ItemGroup>
     <ClInclude Include="include\common.h" />
     <ClInclude Include="include\RaiiTimer.h" />
+    <ClInclude Include="include\Test.h" />
     <ClInclude Include="include\TimerResults.h" />
     <ClInclude Include="include\timer_defines.h" />
-    <ClInclude Include="Test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
