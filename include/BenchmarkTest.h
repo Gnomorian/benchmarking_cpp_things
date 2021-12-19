@@ -12,6 +12,7 @@ namespace wiwyum::benchmark
 	class BenchmarkTest
 	{
 	public:
+		using TestId = intmax_t;
 		/// <summary>
 		/// runs the benchmark.
 		/// <list type="bullet">
@@ -38,5 +39,12 @@ namespace wiwyum::benchmark
 		/// teardown code you might want to run after timed execute(). run() may be called multiple times.
 		/// </summary>
 		virtual void teardown();
+		/// <summary>
+		/// unique identifier for each test, commonly used for sorting when adding to arrays.
+		/// </summary>
+		const TestId myId{initializeId()};
+	private:
+		static std::atomic<TestId> currentTestId;
+		virtual TestId initializeId() final;
 	};
 }

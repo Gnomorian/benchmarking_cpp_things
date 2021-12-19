@@ -159,10 +159,12 @@
     </Xdcmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\BenchmarkRunner.cpp" />
     <ClCompile Include="source\BenchmarkTest.cpp" />
     <ClCompile Include="source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\BenchmarkRunner.h" />
     <ClInclude Include="include\common.h" />
     <ClInclude Include="include\RaiiTimer.h" />
     <ClInclude Include="include\BenchmarkTest.h" />

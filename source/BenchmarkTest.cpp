@@ -3,6 +3,8 @@
 
 namespace wiwyum::benchmark
 {
+	std::atomic<BenchmarkTest::TestId> BenchmarkTest::currentTestId{0};
+
 	timer::TimerResults BenchmarkTest::run()
 	{
 		timer::TimerResults results;
@@ -16,4 +18,8 @@ namespace wiwyum::benchmark
 	{}
 	void BenchmarkTest::teardown()
 	{}
+	BenchmarkTest::TestId BenchmarkTest::initializeId()
+	{
+		return currentTestId++;
+	}
 }

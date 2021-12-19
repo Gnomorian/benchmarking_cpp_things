@@ -24,6 +24,9 @@
     <ClCompile Include="source\BenchmarkTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\BenchmarkRunner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\common.h">
@@ -40,6 +43,9 @@
     </ClInclude>
     <ClInclude Include="include\BenchmarkTest.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BenchmarkRunner.h">
+      <Filter>Header Files\timers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
