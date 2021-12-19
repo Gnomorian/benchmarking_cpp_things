@@ -1,0 +1,42 @@
+#pragma once
+
+#include "TimerResults.h"
+
+namespace wiwyum::benchmark
+{
+	/// <summary>
+	/// an interface for a specific benchmark.
+	/// So if your comparing two things, you would implement this twice, 
+	/// once for each thing your comparing.
+	/// </summary>
+	class BenchmarkTest
+	{
+	public:
+		/// <summary>
+		/// runs the benchmark.
+		/// <list type="bullet">
+		///		<item><description>calls setup()</description></item>
+		///		<item><description>begins the timer</description></item>
+		///		<item><description>calls execute()</description></item>
+		///		<item><description>ends the timer</description></item>
+		///		<item><description>calls teardown()</description></item>
+		/// </list>
+		/// </summary>
+		/// <returns>
+		///	a TimerResults structure containing the start and end timepoints for the execute() method.
+		/// </returns>
+		virtual timer::TimerResults run() final;
+		/// <summary>
+		/// pure virtual function subclasses have to implement to define the actual code that you want benchmarked.
+		/// </summary>
+		virtual void execute() = 0;
+		/// <summary>
+		/// setup code you might want run before the timed execute() method. run() may be called multiple times.
+		/// </summary>
+		virtual void setup();
+		/// <summary>
+		/// teardown code you might want to run after timed execute(). run() may be called multiple times.
+		/// </summary>
+		virtual void teardown();
+	};
+}

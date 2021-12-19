@@ -95,6 +95,9 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Xdcmake>
+      <AdditionalOptions>/doc %(AdditionalOptions)</AdditionalOptions>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -113,6 +116,9 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Xdcmake>
+      <AdditionalOptions>/doc %(AdditionalOptions)</AdditionalOptions>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -127,6 +133,9 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Xdcmake>
+      <AdditionalOptions>/doc %(AdditionalOptions)</AdditionalOptions>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -145,14 +154,18 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Xdcmake>
+      <AdditionalOptions>/doc %(AdditionalOptions)</AdditionalOptions>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\BenchmarkTest.cpp" />
     <ClCompile Include="source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\common.h" />
     <ClInclude Include="include\RaiiTimer.h" />
-    <ClInclude Include="include\Test.h" />
+    <ClInclude Include="include\BenchmarkTest.h" />
     <ClInclude Include="include\TimerResults.h" />
     <ClInclude Include="include\timer_defines.h" />
   </ItemGroup>

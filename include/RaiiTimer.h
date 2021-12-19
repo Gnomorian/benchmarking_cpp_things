@@ -10,6 +10,7 @@ namespace wiwyum::timer
 	class RaiiTimer
 	{
 		TimerResults& myResults;
+	public:
 		RaiiTimer(TimerResults& results)
 			: myResults{ results }
 		{
