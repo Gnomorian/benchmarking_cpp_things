@@ -7,6 +7,7 @@ namespace wiwyum::benchmark
 	{}
 	BenchmarkRunner& BenchmarkRunner::addTest(BenchmarkTest& newTest)
 	{
+		
 		return *this;
 	}
 }

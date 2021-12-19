@@ -18,6 +18,10 @@ namespace wiwyum::benchmark
 	{}
 	void BenchmarkTest::teardown()
 	{}
+	bool BenchmarkTest::operator<(BenchmarkTest& right) const
+	{
+		return myId < right.myId;
+	}
 	BenchmarkTest::TestId BenchmarkTest::initializeId()
 	{
 		return currentTestId++;

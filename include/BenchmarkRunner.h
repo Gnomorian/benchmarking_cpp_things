@@ -1,5 +1,7 @@
 #pragma once
 #include "BenchmarkTest.h"
+#include <map>
+#include <set>
 
 namespace wiwyum::benchmark
 {
@@ -10,7 +12,11 @@ namespace wiwyum::benchmark
 	{
 		const std::uintmax_t NumRuns;
 	public:
+		using TimerResultsArray = std::vector<timer::TimerResults>;
 		BenchmarkRunner(decltype(NumRuns) runs);
 		BenchmarkRunner& addTest(BenchmarkTest& newTest);
+	protected:
+		std::set<BenchmarkTest&> tests;
+		std::map<BenchmarkTest::TestId, TimerResultsArray> results;
 	};
 }

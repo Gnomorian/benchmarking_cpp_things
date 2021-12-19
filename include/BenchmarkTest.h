@@ -43,6 +43,7 @@ namespace wiwyum::benchmark
 		/// unique identifier for each test, commonly used for sorting when adding to arrays.
 		/// </summary>
 		const TestId myId{initializeId()};
+		bool operator<(BenchmarkTest& right) const;
 	private:
 		static std::atomic<TestId> currentTestId;
 		virtual TestId initializeId() final;
