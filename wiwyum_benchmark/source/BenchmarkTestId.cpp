@@ -4,7 +4,7 @@
 
 namespace wiwyum::benchmark
 {
-	BenchmarkTestId generateId() noexcept
+	BenchmarkTestId generateBenchmarkTestId() noexcept
 	{
 		static std::atomic<BenchmarkTestId> currentId{ 0 };
 		return ++currentId;

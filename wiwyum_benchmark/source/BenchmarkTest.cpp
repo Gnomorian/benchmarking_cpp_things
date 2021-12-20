@@ -5,7 +5,7 @@
 namespace wiwyum::benchmark
 {
 	BenchmarkTest::BenchmarkTest()
-		: myId{generateId() }
+		: myId{generateBenchmarkTestId() }
 	{}
 
 	timer::TimerResults BenchmarkTest::run()
