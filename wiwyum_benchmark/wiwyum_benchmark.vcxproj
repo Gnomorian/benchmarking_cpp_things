@@ -151,10 +151,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\BenchmarkRunner.cpp" />
+    <ClCompile Include="source\BenchmarkTest.cpp" />
     <ClCompile Include="source\entry.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\public_headers\BenchmarkRunner.h" />
+    <ClInclude Include="include\public_headers\BenchmarkTest.h" />
+    <ClInclude Include="include\public_headers\BenchmarkTestComparitor.h" />
+    <ClInclude Include="include\public_headers\BenchmarkTestDescriptor.h" />
     <ClInclude Include="include\public_headers\dllexports.h" />
+    <ClInclude Include="include\public_headers\RaiiTimer.h" />
+    <ClInclude Include="include\public_headers\TimerResults.h" />
+    <ClInclude Include="include\public_headers\timer_defines.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

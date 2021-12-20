@@ -159,19 +159,15 @@
     </Xdcmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="source\BenchmarkRunner.cpp" />
-    <ClCompile Include="source\BenchmarkTest.cpp" />
     <ClCompile Include="source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\BenchmarkRunner.h" />
-    <ClInclude Include="include\BenchmarkTestComparitor.h" />
-    <ClInclude Include="include\BenchmarkTestDescriptor.h" />
     <ClInclude Include="include\common.h" />
-    <ClInclude Include="include\RaiiTimer.h" />
-    <ClInclude Include="include\BenchmarkTest.h" />
-    <ClInclude Include="include\TimerResults.h" />
-    <ClInclude Include="include\timer_defines.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="wiwyum_benchmark\wiwyum_benchmark.vcxproj">
+      <Project>{c6cf5a79-4d61-4f06-a9c6-d6eb921fdd1c}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,5 @@
 #pragma once
+#include "dllexports.h"
 #include "BenchmarkTest.h"
 #include "BenchmarkTestComparitor.h"
 #include <map>
@@ -9,7 +10,7 @@ namespace wiwyum::benchmark
 	/// <summary>
 	/// run a variable amount of <see cref="wiwyum::benchmark::BenchmarkTests">BenchmarkTests</see> for a set amount of <see cref="BenchmarkRunner::NumRuns">iterations</see>.
 	/// </summary>
-	class BenchmarkRunner
+	class ExportClass BenchmarkRunner
 	{
 		const std::uintmax_t NumRuns;
 	public:

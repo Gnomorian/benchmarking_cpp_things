@@ -16,15 +16,48 @@
     <Filter Include="Header Files\public_headers">
       <UniqueIdentifier>{4b73c13f-790f-4382-874e-2c7b9681b855}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\public_headers\timers">
+      <UniqueIdentifier>{364e1a30-c51f-41b3-81ba-b8f143c0363c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\public_headers\benchmark">
+      <UniqueIdentifier>{fb255ed2-59a7-4a19-8543-f9458987cdb2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\BenchmarkRunner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\BenchmarkTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\public_headers\dllexports.h">
       <Filter>Header Files\public_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\public_headers\TimerResults.h">
+      <Filter>Header Files\public_headers\timers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\public_headers\RaiiTimer.h">
+      <Filter>Header Files\public_headers\timers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\public_headers\timer_defines.h">
+      <Filter>Header Files\public_headers\timers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\public_headers\BenchmarkTestDescriptor.h">
+      <Filter>Header Files\public_headers\benchmark</Filter>
+    </ClInclude>
+    <ClInclude Include="include\public_headers\BenchmarkRunner.h">
+      <Filter>Header Files\public_headers\benchmark</Filter>
+    </ClInclude>
+    <ClInclude Include="include\public_headers\BenchmarkTest.h">
+      <Filter>Header Files\public_headers\benchmark</Filter>
+    </ClInclude>
+    <ClInclude Include="include\public_headers\BenchmarkTestComparitor.h">
+      <Filter>Header Files\public_headers\benchmark</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
