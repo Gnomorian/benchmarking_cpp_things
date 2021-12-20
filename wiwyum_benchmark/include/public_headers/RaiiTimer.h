@@ -1,13 +1,14 @@
 #pragma once
 #include "timer_defines.h"
 #include "TimerResults.h"
+#include "dllexports.h"
 
 namespace wiwyum::timer
 {
 	/// <summary>
 	/// Simple clean way to get the start and end time of a scope in nanoseconds.
 	/// </summary>
-	class RaiiTimer
+	class ExportClass RaiiTimer
 	{
 		TimerResults& myResults;
 	public:

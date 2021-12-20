@@ -1,5 +1,6 @@
 #pragma once
 
+#include "dllexports.h"
 #include "TimerResults.h"
 #include "BenchmarkTestDescriptor.h"
 
@@ -10,7 +11,7 @@ namespace wiwyum::benchmark
 	/// So if your comparing two things, you would implement this twice, 
 	/// once for each thing your comparing.
 	/// </summary>
-	class BenchmarkTest
+	class ExportClass BenchmarkTest
 	{
 	public:
 		using TestId = intmax_t;
