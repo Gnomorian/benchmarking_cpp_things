@@ -8,7 +8,7 @@
 namespace wiwyum::benchmark
 {
 	/// <summary>
-	/// run a variable amount of <see cref="wiwyum::benchmark::BenchmarkTests">BenchmarkTests</see> for a set amount of <see cref="BenchmarkRunner::NumRuns">iterations</see>.
+	/// run a variable amount of <see cref="wiwyum::benchmark::BenchmarkTest">BenchmarkTests</see> for a set amount of iterations.
 	/// </summary>
 	class ExportClass BenchmarkRunner
 	{
