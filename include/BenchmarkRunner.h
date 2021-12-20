@@ -16,7 +16,7 @@ namespace wiwyum::benchmark
 		BenchmarkRunner(decltype(NumRuns) runs);
 		BenchmarkRunner& addTest(BenchmarkTest& newTest);
 	protected:
-		std::set<BenchmarkTest*> tests;
+		std::set<BenchmarkTest*, BenchmarkTestLessComparitor> tests;
 		std::map<BenchmarkTest::TestId, TimerResultsArray> results;
 	};
 }

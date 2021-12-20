@@ -48,4 +48,17 @@ namespace wiwyum::benchmark
 		static std::atomic<TestId> currentTestId;
 		virtual TestId initializeId() final;
 	};
+
+	struct BenchmarkTestLessComparitor
+	{
+
+		constexpr bool operator()(const BenchmarkTest& left, const BenchmarkTest& right) const
+		{
+			return left.myId < right.myId;
+		}
+		constexpr bool operator()(const BenchmarkTest* left, const BenchmarkTest* right) const
+		{
+			return left->myId < right->myId;
+		}
+	};
 }
