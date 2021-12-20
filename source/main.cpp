@@ -5,6 +5,7 @@
 #include "BenchmarkRunner.h"
 #include <thread>
 #include <valarray>
+#include <Logger.h>
 
 class DummySleepTest : public wiwyum::benchmark::BenchmarkTest
 {
@@ -50,4 +51,6 @@ int wmain(int argc, wchar_t* args[])
 	DummySleepTest test2{ std::chrono::milliseconds{10} };
 	const auto results{ testRunner->addTest(test1).addTest(test2).run() };
 	printResults(results);
+
+	wiwyum::makeLogger()->info(L"some message");
 }

@@ -39,6 +39,12 @@
     <ClCompile Include="source\BenchmarkRunnerImplementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\BasicLogger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\public_headers\dllexports.h">
@@ -69,6 +75,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\BenchmarkRunnerImplementation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\public_headers\Logger.h">
+      <Filter>Header Files\public_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BasicLogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

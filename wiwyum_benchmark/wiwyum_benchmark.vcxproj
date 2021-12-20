@@ -92,7 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);;DLL_EXPORT_GNOMORIAN</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)include\;$(ProjectDir)include\public_headers\</AdditionalIncludeDirectories>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
@@ -109,7 +109,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);DLL_EXPORT_GNOMORIAN</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)include\;$(ProjectDir)include\public_headers\</AdditionalIncludeDirectories>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
@@ -126,7 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);DLL_EXPORT_GNOMORIAN;DLL_EXPORT_GNOMORIAN</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)include\;$(ProjectDir)include\public_headers\</AdditionalIncludeDirectories>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
@@ -143,7 +143,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);DLL_EXPORT_GNOMORIAN</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)include\;$(ProjectDir)include\public_headers\</AdditionalIncludeDirectories>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
@@ -155,13 +155,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\BasicLogger.cpp" />
     <ClCompile Include="source\BenchmarkRunner.cpp" />
     <ClCompile Include="source\BenchmarkRunnerImplementation.cpp" />
     <ClCompile Include="source\BenchmarkTest.cpp" />
     <ClCompile Include="source\BenchmarkTestId.cpp" />
     <ClCompile Include="source\entry.cpp" />
+    <ClCompile Include="source\Logger.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\BasicLogger.h" />
     <ClInclude Include="include\BenchmarkRunnerImplementation.h" />
     <ClInclude Include="include\BenchmarkTestId.h" />
     <ClInclude Include="include\public_headers\BenchmarkRunner.h" />
@@ -169,6 +172,7 @@
     <ClInclude Include="include\public_headers\BenchmarkTestComparitor.h" />
     <ClInclude Include="include\public_headers\BenchmarkTestDescriptor.h" />
     <ClInclude Include="include\public_headers\dllexports.h" />
+    <ClInclude Include="include\public_headers\Logger.h" />
     <ClInclude Include="include\public_headers\RaiiTimer.h" />
     <ClInclude Include="include\public_headers\TimerResults.h" />
     <ClInclude Include="include\public_headers\timer_defines.h" />
