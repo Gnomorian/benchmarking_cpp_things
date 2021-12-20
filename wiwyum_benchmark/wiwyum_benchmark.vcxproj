@@ -152,12 +152,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\entry.cpp" />
-    <ClCompile Include="source\SomeClassImplementation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\public_headers\dllexports.h" />
-    <ClInclude Include="include\public_headers\SomeClass.h" />
-    <ClInclude Include="include\SomeClassImplementation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

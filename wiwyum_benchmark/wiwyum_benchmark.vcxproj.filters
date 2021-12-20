@@ -21,19 +21,10 @@
     <ClCompile Include="source\entry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\SomeClassImplementation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\public_headers\dllexports.h">
       <Filter>Header Files\public_headers</Filter>
-    </ClInclude>
-    <ClInclude Include="include\public_headers\SomeClass.h">
-      <Filter>Header Files\public_headers</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SomeClassImplementation.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
