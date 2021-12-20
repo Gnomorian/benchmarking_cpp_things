@@ -15,6 +15,11 @@ namespace wiwyum::benchmark
 	public:
 		using TimerResultsArray = std::vector<timer::TimerResults>;
 		BenchmarkRunner(decltype(NumRuns) runs);
+		/// <summary>
+		/// Adds a <see cref="wiwyum::benchmark::BenchmarkTest">BenchmarkTest</see> to be run when you call run().
+		/// </summary>
+		/// <param name="newTest">the non-owning unique <see cref="wiwyum::benchmark::BenchmarkTest">BenchmarkTest</see></param>
+		/// <returns>a reference to self</returns>
 		BenchmarkRunner& addTest(BenchmarkTest& newTest);
 	protected:
 		std::set<BenchmarkTest*, BenchmarkTestLessComparitor> tests;

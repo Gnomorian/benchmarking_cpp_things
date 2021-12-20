@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TimerResults.h"
+#include "BenchmarkTestDescriptor.h"
 
 namespace wiwyum::benchmark
 {
@@ -40,10 +41,20 @@ namespace wiwyum::benchmark
 		/// </summary>
 		virtual void teardown();
 		/// <summary>
+		/// get the author and description of the test
+		/// </summary>
+		/// <returns>A <see cRef="wiwyum::benchmark::BenchmarkTestDescriptor">BenchmarkTestDescriptor</see> structure</returns>
+		virtual BenchmarkTestDescriptor description() const;
+		/// <summary>
+		/// std::less comparitor
+		/// </summary>
+		/// <param name="right">right hand side of comparitor</param>
+		/// <returns></returns>
+		virtual bool operator<(BenchmarkTest& right) const;
+		/// <summary>
 		/// unique identifier for each test, commonly used for sorting when adding to arrays.
 		/// </summary>
 		const TestId myId{initializeId()};
-		bool operator<(BenchmarkTest& right) const;
 	private:
 		static std::atomic<TestId> currentTestId;
 		virtual TestId initializeId() final;

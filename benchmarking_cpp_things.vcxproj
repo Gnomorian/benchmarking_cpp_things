@@ -166,6 +166,7 @@
   <ItemGroup>
     <ClInclude Include="include\BenchmarkRunner.h" />
     <ClInclude Include="include\BenchmarkTestComparitor.h" />
+    <ClInclude Include="include\BenchmarkTestDescriptor.h" />
     <ClInclude Include="include\common.h" />
     <ClInclude Include="include\RaiiTimer.h" />
     <ClInclude Include="include\BenchmarkTest.h" />

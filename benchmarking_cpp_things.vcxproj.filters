@@ -50,5 +50,8 @@
     <ClInclude Include="include\BenchmarkTestComparitor.h">
       <Filter>Header Files\timers</Filter>
     </ClInclude>
+    <ClInclude Include="include\BenchmarkTestDescriptor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

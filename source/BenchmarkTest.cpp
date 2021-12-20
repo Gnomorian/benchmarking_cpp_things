@@ -18,6 +18,16 @@ namespace wiwyum::benchmark
 	{}
 	void BenchmarkTest::teardown()
 	{}
+	BenchmarkTestDescriptor BenchmarkTest::description() const
+	{
+		struct DefaultDescription : BenchmarkTestDescriptor
+		{
+			DefaultDescription()
+				: BenchmarkTestDescriptor{L"Default benchmark test description", L"William Cameron"}
+			{}
+		};
+		return DefaultDescription{};
+	}
 	bool BenchmarkTest::operator<(BenchmarkTest& right) const
 	{
 		return myId < right.myId;
