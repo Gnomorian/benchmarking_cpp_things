@@ -1,5 +1,6 @@
 #pragma once
 #include "BenchmarkTest.h"
+#include "BenchmarkTestComparitor.h"
 #include <map>
 #include <set>
 
