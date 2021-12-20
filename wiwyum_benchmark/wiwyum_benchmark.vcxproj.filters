@@ -33,6 +33,12 @@
     <ClCompile Include="source\BenchmarkTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\BenchmarkTestId.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\BenchmarkRunnerImplementation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\public_headers\dllexports.h">
@@ -58,6 +64,12 @@
     </ClInclude>
     <ClInclude Include="include\public_headers\BenchmarkTestComparitor.h">
       <Filter>Header Files\public_headers\benchmark</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BenchmarkTestId.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BenchmarkRunnerImplementation.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

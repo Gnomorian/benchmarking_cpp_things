@@ -6,6 +6,7 @@
 
 namespace wiwyum::benchmark
 {
+	using BenchmarkTestId = std::intmax_t;
 	/// <summary>
 	/// an interface for a specific benchmark.
 	/// So if your comparing two things, you would implement this twice, 
@@ -14,7 +15,7 @@ namespace wiwyum::benchmark
 	class ExportClass BenchmarkTest
 	{
 	public:
-		using TestId = intmax_t;
+		BenchmarkTest();
 		/// <summary>
 		/// runs the benchmark.
 		/// <list type="bullet">
@@ -55,9 +56,6 @@ namespace wiwyum::benchmark
 		/// <summary>
 		/// unique identifier for each test, commonly used for sorting when adding to arrays.
 		/// </summary>
-		const TestId myId{initializeId()};
-	private:
-		static std::atomic<TestId> currentTestId;
-		virtual TestId initializeId() final;
+		const BenchmarkTestId myId;
 	};
 }

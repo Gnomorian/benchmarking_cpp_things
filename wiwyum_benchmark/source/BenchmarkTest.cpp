@@ -1,9 +1,12 @@
 #include "BenchmarkTest.h"
 #include "RaiiTimer.h"
+#include "BenchmarkTestId.h"
 
 namespace wiwyum::benchmark
 {
-	std::atomic<BenchmarkTest::TestId> BenchmarkTest::currentTestId{0};
+	BenchmarkTest::BenchmarkTest()
+		: myId{generateId() }
+	{}
 
 	timer::TimerResults BenchmarkTest::run()
 	{
@@ -31,9 +34,5 @@ namespace wiwyum::benchmark
 	bool BenchmarkTest::operator<(BenchmarkTest& right) const
 	{
 		return myId < right.myId;
-	}
-	BenchmarkTest::TestId BenchmarkTest::initializeId()
-	{
-		return currentTestId++;
 	}
 }

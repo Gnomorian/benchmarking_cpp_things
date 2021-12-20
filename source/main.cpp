@@ -45,9 +45,9 @@ void printResults(auto map)
 
 int wmain(int argc, wchar_t* args[])
 {
-	wiwyum::benchmark::BenchmarkRunner testRunner{ 10 };
+	auto testRunner{ wiwyum::benchmark::makeBenchmarkRunner(10) };
 	DummySleepTest test1{std::chrono::milliseconds{5}};
 	DummySleepTest test2{ std::chrono::milliseconds{10} };
-	const auto results{ testRunner.addTest(test1).addTest(test2).run() };
+	const auto results{ testRunner->addTest(test1).addTest(test2).run() };
 	printResults(results);
 }

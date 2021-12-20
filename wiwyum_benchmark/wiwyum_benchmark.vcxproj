@@ -152,10 +152,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\BenchmarkRunner.cpp" />
+    <ClCompile Include="source\BenchmarkRunnerImplementation.cpp" />
     <ClCompile Include="source\BenchmarkTest.cpp" />
+    <ClCompile Include="source\BenchmarkTestId.cpp" />
     <ClCompile Include="source\entry.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\BenchmarkRunnerImplementation.h" />
+    <ClInclude Include="include\BenchmarkTestId.h" />
     <ClInclude Include="include\public_headers\BenchmarkRunner.h" />
     <ClInclude Include="include\public_headers\BenchmarkTest.h" />
     <ClInclude Include="include\public_headers\BenchmarkTestComparitor.h" />
