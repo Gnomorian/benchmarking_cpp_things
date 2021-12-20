@@ -1,13 +1,28 @@
 #include <iostream>
 #include <string>
 #include "common.h"
+#include "BenchmarkTest.h"
+#include "BenchmarkRunner.h"
+#include <thread>
+
+class DummySleepTest : public wiwyum::benchmark::BenchmarkTest
+{
+	std::chrono::milliseconds SleepFor;
+public:
+	DummySleepTest(std::chrono::milliseconds sleepFor)
+		: SleepFor{sleepFor}
+	{}
+	// Inherited via BenchmarkTest
+	virtual void execute() override
+	{
+		std::this_thread::sleep_for(SleepFor);
+	}
+};
 
 int wmain(int argc, wchar_t* args[])
 {
-	const auto commandline{ stdCommandline(argc, args) };
-	std::wcout << "writing commandline: " << std::endl;
-	for (size_t i = 0; i < commandline.size(); i++)
-	{
-		std::wcout << concat(i, ") is ", commandline[i]) << std::endl;
-	}
+	wiwyum::benchmark::BenchmarkRunner testRunner{ 1000 };
+	DummySleepTest test1{std::chrono::milliseconds{5}};
+	DummySleepTest test2{ std::chrono::milliseconds{10} };
+	const auto results{ testRunner.addTest(test1).addTest(test2).run() };
 }
