@@ -172,6 +172,7 @@
     <ClInclude Include="include\public_headers\BenchmarkTestComparitor.h" />
     <ClInclude Include="include\public_headers\BenchmarkTestDescriptor.h" />
     <ClInclude Include="include\public_headers\dllexports.h" />
+    <ClInclude Include="include\public_headers\formattable.h" />
     <ClInclude Include="include\public_headers\Logger.h" />
     <ClInclude Include="include\public_headers\RaiiTimer.h" />
     <ClInclude Include="include\public_headers\TimerResults.h" />

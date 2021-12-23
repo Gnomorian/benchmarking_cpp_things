@@ -22,6 +22,9 @@
     <Filter Include="Header Files\public_headers\benchmark">
       <UniqueIdentifier>{fb255ed2-59a7-4a19-8543-f9458987cdb2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\public_headers\Format">
+      <UniqueIdentifier>{d3bd8661-6cac-45ae-8b48-1f14b0b83f45}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\entry.cpp">
@@ -82,6 +85,9 @@
     </ClInclude>
     <ClInclude Include="include\BasicLogger.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\public_headers\formattable.h">
+      <Filter>Header Files\public_headers\Format</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
