@@ -26,7 +26,7 @@ namespace wiwyum::benchmark
 		struct DefaultDescription : BenchmarkTestDescriptor
 		{
 			DefaultDescription()
-				: BenchmarkTestDescriptor{L"Default benchmark test description", L"William Cameron"}
+				: BenchmarkTestDescriptor{L"Default Test", L"Default benchmark test description", L"William Cameron"}
 			{}
 		};
 		return DefaultDescription{};

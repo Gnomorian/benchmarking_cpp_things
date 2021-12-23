@@ -52,5 +52,5 @@ int wmain(int argc, wchar_t* args[])
 	const auto results{ testRunner->addTest(test1).addTest(test2).run() };
 	printResults(results);
 
-	wiwyum::makeLogger()->info(L"some message");
+	wiwyum::makeLogger()->infoArgs(L"some message", "blah");
 }
