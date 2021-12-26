@@ -44,6 +44,9 @@ void printResults(auto map)
 	}
 }
 
+#include <Windows.h>
+#include <array>
+
 int wmain(int argc, wchar_t* args[])
 {
 	auto testRunner{ wiwyum::benchmark::makeBenchmarkRunner(10) };
@@ -51,6 +54,5 @@ int wmain(int argc, wchar_t* args[])
 	DummySleepTest test2{ std::chrono::milliseconds{10} };
 	const auto results{ testRunner->addTest(test1).addTest(test2).run() };
 	printResults(results);
-
-	wiwyum::makeLogger()->infoArgs(L"some message", "blah");
+	wiwyum::makeLogger()->critical(L"using the new getLogPath thing");
 }

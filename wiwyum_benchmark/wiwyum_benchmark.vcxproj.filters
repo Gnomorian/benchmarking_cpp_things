@@ -89,8 +89,5 @@
     <ClInclude Include="include\public_headers\formattable.h">
       <Filter>Header Files\public_headers\Format</Filter>
     </ClInclude>
-    <ClInclude Include="include\public_headers\Printer.h">
-      <Filter>Header Files\public_headers\Format</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

@@ -174,7 +174,6 @@
     <ClInclude Include="include\public_headers\dllexports.h" />
     <ClInclude Include="include\public_headers\formattable.h" />
     <ClInclude Include="include\public_headers\Logger.h" />
-    <ClInclude Include="include\public_headers\Printer.h" />
     <ClInclude Include="include\public_headers\RaiiTimer.h" />
     <ClInclude Include="include\public_headers\TimerResults.h" />
     <ClInclude Include="include\public_headers\timer_defines.h" />
