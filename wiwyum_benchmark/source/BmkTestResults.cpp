@@ -2,35 +2,35 @@
 
 namespace wiwyum::benchmark
 {
-	void BenchmarkTestResults::addMainTimePoint(const timer::TimerResults results)
+	void BenchmarkTestResults::addTimePoint(const timer::TimerResults results)
 	{
 
 	}
-	void BenchmarkTestResults::addCustomTimePoint(const std::wstring_view key, const timer::TimerResults results)
+	void BenchmarkTestResults::addTimePoint(const std::wstring_view key, const timer::TimerResults results)
 	{
 
 	}
-	timer::ClockDuration BenchmarkTestResults::mainBenchmarkAverage() const
+	timer::ClockDuration BenchmarkTestResults::average() const
 	{
 
 	}
-	timer::ClockDuration BenchmarkTestResults::mainBenchmarkMax() const
+	timer::ClockDuration BenchmarkTestResults::max() const
 	{
 
 	}
-	timer::ClockDuration BenchmarkTestResults::mainBenchmarkMin() const
+	timer::ClockDuration BenchmarkTestResults::min() const
 	{
 
 	}
-	timer::ClockDuration BenchmarkTestResults::benchmarkKeyAverage(const std::wstring_view key) const
+	timer::ClockDuration BenchmarkTestResults::average(const std::wstring_view key) const
 	{
 
 	}
-	timer::ClockDuration BenchmarkTestResults::benchmarkKeyMax(const std::wstring_view key) const
+	timer::ClockDuration BenchmarkTestResults::max(const std::wstring_view key) const
 	{
 
 	}
-	timer::ClockDuration BenchmarkTestResults::benchmarkKeyMin(const std::wstring_view key) const
+	timer::ClockDuration BenchmarkTestResults::min(const std::wstring_view key) const
 	{
 
 	}
