@@ -44,9 +44,6 @@ void printResults(auto map)
 	}
 }
 
-#include <Windows.h>
-#include <array>
-
 int wmain(int argc, wchar_t* args[])
 {
 	auto testRunner{ wiwyum::benchmark::makeBenchmarkRunner(10) };
