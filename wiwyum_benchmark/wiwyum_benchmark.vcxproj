@@ -155,11 +155,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="include\BmkTestResults.cpp" />
     <ClCompile Include="source\BasicLogger.cpp" />
     <ClCompile Include="source\BenchmarkRunner.cpp" />
     <ClCompile Include="source\BenchmarkRunnerImplementation.cpp" />
     <ClCompile Include="source\BenchmarkTest.cpp" />
     <ClCompile Include="source\BenchmarkTestId.cpp" />
+    <ClCompile Include="source\BmkTestResults.cpp" />
     <ClCompile Include="source\entry.cpp" />
     <ClCompile Include="source\Logger.cpp" />
   </ItemGroup>
@@ -167,6 +169,7 @@
     <ClInclude Include="include\BasicLogger.h" />
     <ClInclude Include="include\BenchmarkRunnerImplementation.h" />
     <ClInclude Include="include\BenchmarkTestId.h" />
+    <ClInclude Include="include\BmkTestResults.h" />
     <ClInclude Include="include\public_headers\BenchmarkRunner.h" />
     <ClInclude Include="include\public_headers\BenchmarkTest.h" />
     <ClInclude Include="include\public_headers\BenchmarkTestComparitor.h" />
@@ -175,6 +178,7 @@
     <ClInclude Include="include\public_headers\formattable.h" />
     <ClInclude Include="include\public_headers\Logger.h" />
     <ClInclude Include="include\public_headers\RaiiTimer.h" />
+    <ClInclude Include="include\public_headers\TestResults.h" />
     <ClInclude Include="include\public_headers\TimerResults.h" />
     <ClInclude Include="include\public_headers\timer_defines.h" />
   </ItemGroup>
