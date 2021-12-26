@@ -4,6 +4,7 @@
 #include "BenchmarkTestComparitor.h"
 #include <map>
 #include <set>
+#include "Logger.h"
 
 namespace wiwyum::benchmark
 {
@@ -36,5 +37,5 @@ namespace wiwyum::benchmark
 	/// </summary>
 	/// <param name="numberOfRuns"></param>
 	/// <returns></returns>
-	ExportCppFunction std::unique_ptr<BenchmarkRunner> CALL_CONVENTION makeBenchmarkRunner(size_t numberOfRuns);
+	ExportCppFunction std::unique_ptr<BenchmarkRunner> CALL_CONVENTION makeBenchmarkRunner(size_t numberOfRuns, Logger& logger);
 }

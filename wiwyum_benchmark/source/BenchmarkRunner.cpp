@@ -3,8 +3,8 @@
 
 namespace wiwyum::benchmark
 {
-	std::unique_ptr<BenchmarkRunner> CALL_CONVENTION makeBenchmarkRunner(size_t numberOfRuns)
+	std::unique_ptr<BenchmarkRunner> CALL_CONVENTION makeBenchmarkRunner(size_t numberOfRuns, Logger& logger)
 	{
-		return std::make_unique<BenchmarkRunnerImplementation>(numberOfRuns);
+		return std::make_unique<BenchmarkRunnerImplementation>(numberOfRuns, logger);
 	}
 }

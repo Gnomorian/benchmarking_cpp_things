@@ -2,8 +2,9 @@
 
 namespace wiwyum::benchmark
 {
-	BenchmarkRunnerImplementation::BenchmarkRunnerImplementation(decltype(NumRuns) runs)
+	BenchmarkRunnerImplementation::BenchmarkRunnerImplementation(decltype(NumRuns) runs, decltype(logger) logger)
 		: NumRuns{ runs }
+		, logger{ logger }
 	{
 		assertNumRunsNotZero();
 	}

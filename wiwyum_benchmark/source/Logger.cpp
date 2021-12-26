@@ -5,6 +5,11 @@
 
 namespace wiwyum
 {
+	/// <summary>
+	/// gets the path to a file in the same directory as the executable with the same name as the executable
+	/// but has .log as the extension.
+	/// </summary>
+	/// <returns>std::filesystem::path to the log file that may or may not exist.</returns>
 	std::filesystem::path getLogPath()
 	{
 		constexpr auto getExeFileName = [](wchar_t* pStr, const size_t strLen, size_t& actualSize) -> bool
