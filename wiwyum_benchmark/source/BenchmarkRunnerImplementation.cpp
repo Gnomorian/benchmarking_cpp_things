@@ -22,16 +22,21 @@ namespace wiwyum::benchmark
 				resultsArray.push_back(result);
 			}
 		};
+		logRunStart();
 		for (auto& test : tests)
 		{
+			logTestRunStart(*test);
 			doTestForCount(test, NumRuns);
+			logTestRunEnd(*test);
 		}
+		logRunEnd();
 		return testResults;
 	}
 	void BenchmarkRunnerImplementation::assertNumRunsNotZero() const
 	{
 		if (NumRuns == 0)
 		{
+			logger.critical(L"BenchmarkRunner::NumRuns should not be 0.");
 			throw std::invalid_argument{ "BenchmarkRunner::NumRuns should not be 0." };
 		}
 	}
@@ -39,5 +44,21 @@ namespace wiwyum::benchmark
 	{
 		tests.insert(&newTest);
 		return *this;
+	}
+	void BenchmarkRunnerImplementation::logRunStart()
+	{
+
+	}
+	void BenchmarkRunnerImplementation::logRunEnd()
+	{
+
+	}
+	void BenchmarkRunnerImplementation::logTestRunStart(BenchmarkTest& test)
+	{
+
+	}
+	void BenchmarkRunnerImplementation::logTestRunEnd(BenchmarkTest& test)
+	{
+
 	}
 }

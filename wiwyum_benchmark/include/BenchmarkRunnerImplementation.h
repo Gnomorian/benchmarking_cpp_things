@@ -1,6 +1,7 @@
 #pragma once
 #include "BenchmarkRunner.h"
 #include "Logger.h"
+#include <chrono>
 
 namespace wiwyum::benchmark
 {
@@ -14,6 +15,10 @@ namespace wiwyum::benchmark
 		virtual BenchmarkRunner& addTest(BenchmarkTest& newTest) override;
 	private:
 		virtual void assertNumRunsNotZero() const;
+		virtual void logRunStart();
+		virtual void logRunEnd();
+		virtual void logTestRunStart(BenchmarkTest& test);
+		virtual void logTestRunEnd(BenchmarkTest& test);
 		std::set<BenchmarkTest*, BenchmarkTestLessComparitor> tests;
 	};
 }
