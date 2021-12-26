@@ -47,18 +47,31 @@ namespace wiwyum::benchmark
 	}
 	void BenchmarkRunnerImplementation::logRunStart()
 	{
-
+		std::wstringstream stream;
+		stream << L"Running " << tests.size() << " tests " << NumRuns << " times." << std::endl
+			<< "Tests to run:" << std::endl;
+		for (auto& test : tests)
+		{
+			stream << L"\t" << test->description().Name << std::endl;
+		}
+		logger.info(stream.str());
 	}
 	void BenchmarkRunnerImplementation::logRunEnd()
 	{
-
+		logger.info(L"Benchmark runs completed.");
 	}
 	void BenchmarkRunnerImplementation::logTestRunStart(BenchmarkTest& test)
 	{
-
+		auto[name, description, author] { test.description() };
+		std::wstringstream stream;
+		stream << L"Starting Test:" << std::endl
+			<< L"\t" << L"Name: " << name << std::endl
+			<< L"\t" << L"Description: " << description << std::endl
+			<< L"\t" << L"Author: " << author << std::endl;
+		logger.info(stream.str());
 	}
 	void BenchmarkRunnerImplementation::logTestRunEnd(BenchmarkTest& test)
 	{
-
+		logger.infoArgs(L"Finished running ", test.description().Name);
 	}
 }
