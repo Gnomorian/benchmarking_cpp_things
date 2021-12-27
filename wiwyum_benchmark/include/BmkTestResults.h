@@ -22,11 +22,17 @@ namespace wiwyum::benchmark
 		virtual std::vector<std::wstring> keys() const override;
 		virtual void addBenchmarkKey(std::wstring_view key) override;
 	private:
-		auto createValArray(const auto& collection) const
+		auto makeValArray(const auto& collection) const
 		{
 			std::valarray<timer::ClockDuration> valarray{ mainBenchmarkResults.size() };
 			std::generate(std::begin(valarray), std::end(valarray), [&, i = 0]() mutable {return collection[i++].duration(); });
 			return valarray;
 		}
+		auto average(const auto& valarray) const
+		{
+			const auto sum{ valarray.sum() };
+			return sum / valarray.size();
+		}
+		std::map<std::wstring, std::vector<timer::TimerResults>>::const_iterator findOrError(std::wstring_view key) const;
 	};
 }

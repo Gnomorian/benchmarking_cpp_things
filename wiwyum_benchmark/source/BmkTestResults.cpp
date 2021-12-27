@@ -1,5 +1,6 @@
 #include "BmkTestResults.h"
 #include <valarray>
+#include <iterator>
 
 namespace wiwyum::benchmark
 {
@@ -26,36 +27,58 @@ namespace wiwyum::benchmark
 	}
 	timer::ClockDuration BenchmarkTestResults::average() const
 	{
-		const auto durations{ createValArray(mainBenchmarkResults) };
-		auto sumOfValues{ durations.sum() };
-		return sumOfValues / durations.size();
+		const auto durations{ makeValArray(mainBenchmarkResults) };
+		return average(durations);
 	}
 	timer::ClockDuration BenchmarkTestResults::max() const
 	{
-		throw std::runtime_error{ "not implemented" };
+		const auto durations{ makeValArray(mainBenchmarkResults) };
+		return durations.max();
 	}
 	timer::ClockDuration BenchmarkTestResults::min() const
 	{
-		throw std::runtime_error{ "not implemented" };
+		const auto durations{ makeValArray(mainBenchmarkResults) };
+		return durations.min();
 	}
 	timer::ClockDuration BenchmarkTestResults::average(const std::wstring_view key) const
 	{
-		throw std::runtime_error{ "not implemented" };
+		const auto itr{ findOrError(key) };
+		const auto durations{ makeValArray(itr->second) };
+		return average(durations);
 	}
 	timer::ClockDuration BenchmarkTestResults::max(const std::wstring_view key) const
 	{
-		throw std::runtime_error{ "not implemented" };
+		const auto itr{ findOrError(key) };
+		const auto durations{ makeValArray(itr->second) };
+		return durations.max();
 	}
 	timer::ClockDuration BenchmarkTestResults::min(const std::wstring_view key) const
 	{
-		throw std::runtime_error{ "not implemented" };
+		const auto itr{ findOrError(key) };
+		const auto durations{ makeValArray(itr->second) };
+		return durations.min();
 	}
 	std::vector<std::wstring> BenchmarkTestResults::keys() const
 	{
-		throw std::runtime_error{ "not implemented" };
+		std::vector<std::wstring> keys;
+		auto inserter{ std::back_inserter(keys) };
+		for (const auto [key, value] : benchmarkResultsForKey)
+		{
+			inserter = key;
+		}
+		return keys;
 	}
 	void BenchmarkTestResults::addBenchmarkKey(std::wstring_view key)
 	{
 		throw std::runtime_error{ "not implemented" };
+	}
+	std::map<std::wstring, std::vector<timer::TimerResults>>::const_iterator BenchmarkTestResults::findOrError(std::wstring_view key) const
+	{
+		auto itr{ benchmarkResultsForKey.find(std::wstring{ key }) };
+		if (itr == benchmarkResultsForKey.end())
+		{
+			throw std::runtime_error{ "no entry at key." };
+		}
+		return itr;
 	}
 }
