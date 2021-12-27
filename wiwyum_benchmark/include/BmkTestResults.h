@@ -2,6 +2,7 @@
 #include "TestResults.h"
 #include <vector>
 #include <map>
+#include <valarray>
 
 namespace wiwyum::benchmark
 {
@@ -20,5 +21,12 @@ namespace wiwyum::benchmark
 		virtual timer::ClockDuration min(const std::wstring_view key) const override;
 		virtual std::vector<std::wstring> keys() const override;
 		virtual void addBenchmarkKey(std::wstring_view key) override;
+	private:
+		auto createValArray(const auto& collection) const
+		{
+			std::valarray<timer::ClockDuration> valarray{ mainBenchmarkResults.size() };
+			std::generate(std::begin(valarray), std::end(valarray), [&, i = 0]() mutable {return collection[i++].duration(); });
+			return valarray;
+		}
 	};
 }

@@ -155,7 +155,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="include\BmkTestResults.cpp" />
     <ClCompile Include="source\BasicLogger.cpp" />
     <ClCompile Include="source\BenchmarkRunner.cpp" />
     <ClCompile Include="source\BenchmarkRunnerImplementation.cpp" />

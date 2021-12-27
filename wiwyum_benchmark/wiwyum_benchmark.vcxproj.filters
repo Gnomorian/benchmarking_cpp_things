@@ -48,9 +48,6 @@
     <ClCompile Include="source\BasicLogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\BmkTestResults.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\BmkTestResults.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
