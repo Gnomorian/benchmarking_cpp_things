@@ -3,6 +3,7 @@
 #include "dllexports.h"
 #include "TimerResults.h"
 #include "BenchmarkTestDescriptor.h"
+#include "Logger.h"
 
 namespace wiwyum::benchmark
 {
@@ -54,8 +55,15 @@ namespace wiwyum::benchmark
 		/// <returns></returns>
 		virtual bool operator<(BenchmarkTest& right) const;
 		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="plogger"></param>
+		virtual void setLogger(Logger& newLogger) final;
+		/// <summary>
 		/// unique identifier for each test, commonly used for sorting when adding to arrays.
 		/// </summary>
 		const BenchmarkTestId myId;
+	protected:
+		Logger& logger;
 	};
 }

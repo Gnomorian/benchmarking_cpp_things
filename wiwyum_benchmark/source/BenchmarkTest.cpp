@@ -4,8 +4,17 @@
 
 namespace wiwyum::benchmark
 {
+	class NullLogger : public Logger
+	{
+	public:
+		virtual void info(const std::wstring& message) override {}
+		virtual void debug(const std::wstring& message) override {}
+		virtual void critical(const std::wstring& message) override {}
+	}nullLogger;
+
 	BenchmarkTest::BenchmarkTest()
 		: myId{generateBenchmarkTestId() }
+		, logger{nullLogger}
 	{}
 
 	timer::TimerResults BenchmarkTest::run()
@@ -34,5 +43,9 @@ namespace wiwyum::benchmark
 	bool BenchmarkTest::operator<(BenchmarkTest& right) const
 	{
 		return myId < right.myId;
+	}
+	void BenchmarkTest::setLogger(Logger& newLogger)
+	{
+		logger = newLogger;
 	}
 }
