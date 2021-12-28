@@ -21,4 +21,5 @@ namespace wiwyum::benchmark
 		virtual std::vector<std::wstring> keys() const = 0;
 		virtual void addBenchmarkKey(std::wstring_view key) = 0;
 	};
+	ExportCppFunction std::unique_ptr<TestResults> CALL_CONVENTION makeTestResults();
 }

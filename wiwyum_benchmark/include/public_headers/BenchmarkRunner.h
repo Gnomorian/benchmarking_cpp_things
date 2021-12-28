@@ -1,6 +1,7 @@
 #pragma once
 #include "dllexports.h"
 #include "BenchmarkTest.h"
+#include "TestResults.h"
 #include "BenchmarkTestComparitor.h"
 #include <map>
 #include <set>
@@ -15,7 +16,6 @@ namespace wiwyum::benchmark
 	{
 	public:
 		using RunCountType = size_t;
-		using TimerResultsArray = std::vector<timer::TimerResults>;
 		/// <summary>
 		/// Adds a <see cref="wiwyum::benchmark::BenchmarkTest">BenchmarkTest</see> to be run when you call run().
 		/// </summary>
@@ -28,7 +28,14 @@ namespace wiwyum::benchmark
 		/// <returns>a map containing the timer results for each testid
 		/// //TODO: change TimerResultsArray to a map of string,time_point containing the custom defined benchmark keys for each test incase someone wants total time and sub transaction times for instance.
 		/// </returns>
-		virtual std::map<BenchmarkTestId, TimerResultsArray> run() = 0;
+		virtual std::map<BenchmarkTestId, std::unique_ptr<TestResults>> run() = 0;
+		/// <summary>
+		/// get the test descriptor of the test with this id.
+		/// if the given id doesn't exist throw std::invalid_argument.
+		/// </summary>
+		/// <param name="id">the id of the test</param>
+		/// <returns></returns>
+		virtual BenchmarkTestDescriptor getTestDescriptorById(BenchmarkTestId id) const = 0;
 	};
 	
 	/// <summary>

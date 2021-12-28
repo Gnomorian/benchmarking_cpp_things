@@ -81,4 +81,8 @@ namespace wiwyum::benchmark
 		}
 		return itr;
 	}
+	ExportCppFunction std::unique_ptr<TestResults> CALL_CONVENTION makeTestResults()
+	{
+		return std::make_unique<BenchmarkTestResults>();
+	}
 }

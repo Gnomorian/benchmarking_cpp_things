@@ -11,8 +11,9 @@ namespace wiwyum::benchmark
 		Logger& logger;
 	public:
 		BenchmarkRunnerImplementation(decltype(NumRuns) runs, decltype(logger) logger);
-		virtual std::map<BenchmarkTestId, BenchmarkRunner::TimerResultsArray> run() override;
+		virtual std::map<BenchmarkTestId, std::unique_ptr<TestResults>> run() override;
 		virtual BenchmarkRunner& addTest(BenchmarkTest& newTest) override;
+		virtual BenchmarkTestDescriptor getTestDescriptorById(BenchmarkTestId id) const override;
 	private:
 		virtual void assertNumRunsNotZero() const;
 		virtual void logRunStart();

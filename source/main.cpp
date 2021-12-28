@@ -21,26 +21,14 @@ public:
 	}
 };
 
-constexpr auto average = [](auto valarray)
+void printResults(const auto& map)
 {
-	auto sumOfValues{valarray.sum()};
-	return sumOfValues / valarray.size();
-};
-
-void printResults(auto map)
-{
-	for (auto [testId, results] : map)
+	for (const auto& pair : map)
 	{
-		std::wcout << "TestId: " << testId << std::endl;
-		std::vector<wiwyum::timer::ClockDuration> totals;
-		for (auto& result : results)
-		{
-			totals.push_back(result.duration());
-		}
-		std::valarray<wiwyum::timer::ClockDuration> valArray{ &totals[0], totals.size() };
-		std::wcout << "\t" << "Max Time: " << valArray.max() << std::endl
-			<< "\tMin Time : " << valArray.min() << std::endl
-			<< "\tAverage: " << average(valArray) << std::endl;
+		std::wcout << "TestId: " << pair.first << std::endl;
+		std::wcout << L"\tMin: " << pair.second->min() << std::endl
+			<< L"\tMax: " << pair.second->max() << std::endl
+			<< L"\tAverage: " << pair.second->average() << std::endl;
 	}
 }
 

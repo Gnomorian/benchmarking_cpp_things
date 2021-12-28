@@ -8,18 +8,18 @@ namespace wiwyum::benchmark
 	{
 		assertNumRunsNotZero();
 	}
-	std::map<BenchmarkTestId, BenchmarkRunner::TimerResultsArray> BenchmarkRunnerImplementation::run()
+	std::map<BenchmarkTestId, std::unique_ptr<TestResults>> BenchmarkRunnerImplementation::run()
 	{
-		std::map<BenchmarkTestId, TimerResultsArray> testResults;
+		std::map<BenchmarkTestId, std::unique_ptr<TestResults>> testResults;
 		auto doTestForCount = [&testResults](BenchmarkTest* test, const auto count)
 		{
 			auto result{ test->run() };
-			const auto [iterator, emplaced] {testResults.emplace(std::make_pair(test->myId, TimerResultsArray{ {result} }))};
+			const auto [iterator, emplaced] {testResults.emplace(std::make_pair(test->myId, makeTestResults()))};
 			auto& resultsArray{ iterator->second };
 			for (size_t i{ 1 }; i < count; i++)
 			{
 				auto result{ test->run() };
-				resultsArray.push_back(result);
+				resultsArray->addTimePoint(result);
 			}
 		};
 		logRunStart();
@@ -44,6 +44,27 @@ namespace wiwyum::benchmark
 	{
 		tests.insert(&newTest);
 		return *this;
+	}
+	BenchmarkTestDescriptor BenchmarkRunnerImplementation::getTestDescriptorById(BenchmarkTestId id) const
+	{
+		const auto foundTest {
+			[&]() -> BenchmarkTest*
+			{
+				for (const auto& test : tests)
+				{
+					if (test->myId == id)
+					{
+						return test;
+					}
+				}
+				return nullptr;
+			}()
+		};
+
+		if (foundTest == nullptr)
+			throw std::invalid_argument{ "BenchmarkRunner does not have that test id" };
+
+		return foundTest->description();
 	}
 	void BenchmarkRunnerImplementation::logRunStart()
 	{
