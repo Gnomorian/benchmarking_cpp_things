@@ -12,12 +12,6 @@ namespace wiwyum
 		virtual void info(const std::wstring& message) = 0;
 		virtual void debug(const std::wstring& message) = 0;
 		virtual void critical(const std::wstring& message) = 0;
-		std::wstring concatinate(auto...messageParts)
-		{
-			std::wstringstream stream;
-			((stream << messageParts), ...);
-			return stream.str();
-		}
 		void infoArgs(auto...message)
 		{
 			info(concatinate(message...));
@@ -29,6 +23,13 @@ namespace wiwyum
 		void criticalArgs(auto...message)
 		{
 			critical(concatinate(message...));
+		}
+	private:
+		std::wstring concatinate(auto...messageParts)
+		{
+			std::wstringstream stream;
+			((stream << messageParts), ...);
+			return stream.str();
 		}
 	};
 

@@ -70,6 +70,6 @@ namespace wiwyum::benchmark
 		/// stream info into the void if we dont want output 
 		/// without having to test for nullptr.
 		/// </summary>
-		Logger& logger;
+		std::reference_wrapper<Logger> logger;
 	};
 }
