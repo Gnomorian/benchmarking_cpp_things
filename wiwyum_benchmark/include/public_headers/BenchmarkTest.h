@@ -64,6 +64,12 @@ namespace wiwyum::benchmark
 		/// </summary>
 		const BenchmarkTestId myId;
 	protected:
+		/// <summary>
+		/// a logger object for the test to use.
+		/// by default this is a "null logger" so tests can
+		/// stream info into the void if we dont want output 
+		/// without having to test for nullptr.
+		/// </summary>
 		Logger& logger;
 	};
 }
